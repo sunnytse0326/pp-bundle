@@ -1,8 +1,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="center-wrapper">
+<div class="loader-lty" id="loader" >
+	<div class="loader" ></div>
+</div>
+
+<div class="center-wrapper" style="display: none;" id="center-wrapper">
 	<div class="content-lty">
-		<div class="load-lty"></div>
 		<!-- <div class="iphone-image-lty"><img src="image/iphone_mock.png" alt="iPhone" width="770px"></div> -->
 		<div class="content">
 			<div class="stat-bar" ></div>
@@ -67,6 +70,10 @@
 				<!-- Start of PayPal Smart button  -->
 				<div id="paypal-button-container"></div>
 				<script>paypal.Buttons({
+						onRendered: function() {
+							document.getElementById("center-wrapper").style.display = "block";
+							document.getElementById("loader").style.display = "none";
+    					},
 						enableStandardCardFields: true,
 						createOrder: function (data, actions) {
 							return actions.order.create({
@@ -120,7 +127,7 @@
 								window.location.replace("transuc.html");
 							});
 						}
-					}).render("#paypal-button-container");
+					}).render("#paypal-button-container")
 				</script>
 
 				<!-- End of PayPal Smart Button -->
