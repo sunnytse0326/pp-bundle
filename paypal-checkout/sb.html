@@ -1,7 +1,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <div class="center-wrapper">
 	<div class="content-lty">
-		<div class="iphone-image-lty"><img src="image/iphone_mock.png" alt="iPhone" width="770px"></div>
+		<div class="load-lty"></div>
+		<!-- <div class="iphone-image-lty"><img src="image/iphone_mock.png" alt="iPhone" width="770px"></div> -->
 		<div class="content">
 			<div class="stat-bar" ></div>
 			<nav>
@@ -59,9 +61,7 @@
 					<h3>$825.00</h3>
 				</div>
 
-				<script
-					src="https://www.paypal.com/sdk/js?client-id=AfgzOXuUBgDRNRXUsJaVFcLBqZr04dutzohmLpM4Qz1KQEVBGI-6blmilD7QOrVCvqEGFa2APYMe3VUd"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-					</script>
+				<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
 
 				<!-- Start of PayPal Smart button  -->
 				<div id="paypal-button-container"></div>
@@ -72,22 +72,22 @@
 								intent: 'CAPTURE',
 								payer: {
 									name: {
-										given_name: "PayPalllll",
-										surname: "Customerrrrrr"
+										given_name: "Tse",
+										surname: "Sunny"
 									},
 									address: {
 										address_line_1: '123 ABC Street',
 										address_line_2: 'Apt 2',
 										admin_area_2: 'San Jose',
 										admin_area_1: 'CA',
-										postal_code: '95121',
+										postal_code: '95131',
 										country_code: 'US'
 									},
 									email_address: "customer@domain.com",
 									phone: {
 										phone_type: "MOBILE",
 										phone_number: {
-											national_number: "14082508100"
+											national_number: "11231242343"
 										}
 									}
 								},
@@ -112,6 +112,11 @@
 										},
 									}
 								]
+							});
+						},
+						onApprove: function(data, actions) {
+							return actions.order.capture().then(function(details) {
+								window.location.replace("transuc.html");
 							});
 						}
 					}).render("#paypal-button-container");
