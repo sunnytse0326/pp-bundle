@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Space+Mono:700'); */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Space+Mono:700');
  * {
 	 margin: 0;
 	 padding: 0;
@@ -33,6 +33,22 @@
 	 border: 1px solid white;
 	 background: white;
 }
+
+.transaction-completed-lty {
+  display: none;
+  width: 1000px;
+  background: white;
+}
+
+.image-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
  nav, .top-bar, .bag, .bag-total, .help {
 	 padding: 0.5rem 1rem;
 }
@@ -230,7 +246,4 @@
 	100% { transform: rotate(360deg); }
   }
 
- /* html {
-	 background: repeating-linear-gradient(-45deg, lemonchiffon, lemonchiffon 10px, #fff59a 10px, #fff59a 20px);
-} */
  
