@@ -11,6 +11,7 @@ router.post('/', function(req, response, next) {
   data["event_type"] = response.event_type;
   data["summary"] = response.summary;
   db.createData(data);
+  response.send(200);
 });
 
 module.exports = router;
