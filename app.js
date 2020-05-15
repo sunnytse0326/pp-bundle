@@ -25,6 +25,9 @@ app.use('/users', usersRouter);
 var transaction = require('./routes/transaction-check');
 app.use('/transaction-check', transaction);
 
+var webhook = require('./routes/webhook');
+app.use('/transaction-check', webhook);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
