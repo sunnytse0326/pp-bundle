@@ -6,12 +6,19 @@ const db = require('./postgresql');
 
 router.post('/', function(req, response, next) {
   const data = {};
-  data["hookid"] = response.id;
-  data["create_time"] = response.create_time;
-  data["event_type"] = response.event_type;
-  data["summary"] = response.summary;
-  db.createData(data);
-  response.send(200);
+
+  if(response != null){
+    data["hookid"] = response.id;
+    data["create_time"] = response.create_time;
+    data["event_type"] = response.event_type;
+    data["summary"] = response.summary;
+    db.createData(data);
+    response.send(200);
+  } else{
+    response.send("Parameters needed.");
+  }
+  
+  
 });
 
 module.exports = router;
