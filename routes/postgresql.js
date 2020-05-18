@@ -5,9 +5,10 @@ const pool = new Pool({
   database: 'd3j4fdfgcng30c',
   password: 'f0138aeb18652ae1e57b24b9187403092e73132d909d80c8a55afdbe8eece369',
   port: 5432,
+  ssl: true,
 })
 
-const createData = (data) => {
+const createData = (data, response) => {
   const hookid = data.hookid;
   const create_time = data.create_time; 
   const event_type = data.event_type; 
@@ -17,6 +18,7 @@ const createData = (data) => {
     if (error) {
       throw error
     }
+    response.sendStatus(200);
   })
 }
 
