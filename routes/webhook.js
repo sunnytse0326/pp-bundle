@@ -14,6 +14,8 @@ router.post('/', function(req, response, next) {
 
   console.log(response);
 
+  console.log(response.body);
+
   if(resSet != null && resSet.id != null){
     data["hookid"] = resSet.id;
     data["create_time"] = resSet.create_time;
