@@ -8,9 +8,7 @@ router.post('/', function(req, response, next) {
   const data = {};
   const resSet = response.body;
 
-  console.log(response)
-
-  console.log(response.body)
+  res.on('finish', () => console.log(res));
 
   if(resSet != null && resSet.id != null){
     data["hookid"] = resSet.id;
