@@ -7,6 +7,8 @@ const db = require('./postgresql');
 router.post('/', function(req, response, next) {
   const data = {};
 
+  console.log(response);
+
   if(response != null && response.id != null){
     data["hookid"] = response.id;
     data["create_time"] = response.create_time;
