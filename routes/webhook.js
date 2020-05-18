@@ -10,11 +10,7 @@ router.use(bodyParser.json());
 
 router.post('/', function(req, response, next) {
   const data = {};
-  const resSet = response.body;
-
-  console.log(req);
-
-  console.log(req.body);
+  const resSet = req.body;
 
   if(resSet != null && resSet.id != null){
     data["hookid"] = resSet.id;
