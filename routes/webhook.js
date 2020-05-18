@@ -8,11 +8,15 @@ router.post('/', function(req, response, next) {
   const data = {};
   const resSet = response.body;
 
+  console.log(resSet)
+
   if(resSet != null && resSet.id != null){
     data["hookid"] = resSet.id;
     data["create_time"] = resSet.create_time;
     data["event_type"] = resSet.event_type;
     data["summary"] = resSet.summary;
+
+    console.log(data)
 
     db.createData(data).then(() => {
       response.sendStatus(200);
