@@ -13,6 +13,8 @@ router.post('/', function(req, response, next) {
     data["event_type"] = response.event_type;
     data["summary"] = response.summary;
 
+    console.log(data);
+
     db.createData(data).then(() => {
       response.sendStatus(200);
     });
