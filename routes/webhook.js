@@ -12,7 +12,7 @@ router.post('/', function(req, response, next) {
   const data = {};
   const resSet = response.body;
 
-  res.on('finish', () => console.log(res));
+  console.log(resSet);
 
   if(resSet != null && resSet.id != null){
     data["hookid"] = resSet.id;
