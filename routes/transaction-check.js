@@ -32,10 +32,7 @@ router.post('/', function(req, response, next) {
 
     var result_json = JSON.parse(body)
 
-    console.log(result_json)
     var access_token = result_json.access_token;
-
-    console.log(orderID)
 
     request({
       method: 'GET',
